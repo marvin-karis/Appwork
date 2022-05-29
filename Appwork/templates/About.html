@@ -1,0 +1,73 @@
+
+
+<main>
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+        <ol>
+            <li><a href="C:/Users/user/Desktop/ProjectDjango/src/Appwork/Appwork/templates/home.html/">Home</a></li>
+            <li>Inner Page</li>
+        </ol>
+        <h2>Inner Page</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+        <div class="container">
+          <p>
+            <h2>{{ title|capfirst|upper }}</h2>
+            {{ my_number }},
+            {{ my_list }}
+          </p> 
+          <ul>
+            <li> Item 1</li>
+            <li> Item 2</li>
+            <li> Item 3</li>
+          </ul>
+
+          <ul>  
+          {% for my_sub_item in my_list %}
+            {% if my_sub_item == 333 %}
+              <li>{{ forloop.counter }} - {{ my_sub_item|add:96 }}</li>
+            {% elif my_sub_item == 666 %}
+              <li>{{ forloop.counter }} - {{ my_sub_item|add:333 }}</li>
+            {% else %}
+              <li>{{ forloop.counter }} - {{ my_sub_item|add:1 }}</li>
+            {% endif %}  
+          {% endfor %}
+          </ul>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>About Us</h2>
+          </div>
+  
+          <div class="row content">
+            <div class="col-lg-6">
+              <p>
+                we are a compitent team that does diligent work because customer satisfaction is our number one priority  .
+              </p>
+              <ol>
+                <li><i class="ri-check-double-line"></i> diligent </li>
+                <li><i class="ri-check-double-line"></i> compitent </li>
+                <li><i class="ri-check-double-line"></i> Efficient</li>
+              </ol>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+              <p>
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <a href="#" class="btn-learn-more">Learn More</a>
+            </div>
+          </div>  
+        </div>
+    </section>
+
+</main>
+
