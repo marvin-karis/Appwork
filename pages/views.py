@@ -6,6 +6,10 @@ def home_view(request, *args, **kwargs):
     print(request.user)
     return render(request ,"home.html",{})
 
+def main_view(request, *args, **kwargs):
+    print(args, kwargs)
+    return render(request ,"main.html",{})    
+
 def about_view(request, *args, **kwargs):
     my_context = {
         "title":"templete tags and filter",
@@ -16,3 +20,6 @@ def about_view(request, *args, **kwargs):
 
 def services_view(request, *args, **kwargs):
     return render(request ,"services.html",{})
+
+def style(request):
+    return render (request, 'home.html' )

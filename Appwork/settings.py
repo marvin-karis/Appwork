@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #own app
+    # own app
     'product',
     'services',
     'pages',
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'Appwork.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/user/Desktop/projectdjango/src/appwork/appwork/templates/'],
+        'DIRS': ['C:/Users/user/Desktop/projectdjango/src/appwork/static/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
