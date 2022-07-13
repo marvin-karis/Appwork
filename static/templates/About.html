@@ -1,79 +1,129 @@
+{% load static %} {% block content %}
+<head>
+  <link
+    rel="stylesheet"
+    crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  />
 
-{% load static %}
-<main>
+  <script
+    crossorigin="anonymous"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <link rel="js" href="{% static 'js/main_ajx.js'%}" />
+</head>
+<body>
+  <main>
     <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
-
+      <div class="container">
         <ol>
-            <li><a href="C:/Users/user/Desktop/ProjectDjango/src/Appwork/Appwork/templates/home.html/">Home</a></li>
-            <li>Inner Page</li>
+          <li>
+            <a
+              href="C:/Users/user/Desktop/ProjectDjango/src/Appwork/Appwork/templates/home.html/"
+              >Home</a
+            >
+          </li>
+          <li>Inner Page</li>
         </ol>
         <h2>Inner Page</h2>
-
-        </div>
-    </section><!-- End Breadcrumbs -->
-
-    <section class="inner-page">
-        <div class="container">
-          <p>
-            <h2>{{ title|capfirst|upper }}</h2>
-            {{ my_number }},
-            {{ my_list }}
-          </p> 
-          <ul>
-            <li> Item 1</li>
-            <li> Item 2</li>
-            <li> Item 3</li>
-          </ul>
-
-          <ul>  
-          {% for my_sub_item in my_list %}
-            {% if my_sub_item == 333 %}
-              <li>{{ forloop.counter }} - {{ my_sub_item|add:96 }}</li>
-            {% elif my_sub_item == 666 %}
-              <li>{{ forloop.counter }} - {{ my_sub_item|add:333 }}</li>
-            {% else %}
-              <li>{{ forloop.counter }} - {{ my_sub_item|add:1 }}</li>
-            {% endif %}  
-          {% endfor %}
-          </ul>
-        </div>
+      </div>
     </section>
+    <!-- End Breadcrumbs -->
+
+    <!--<section class="inner-page">
+          <div class="container">
+            <p>
+              <h2>{{ title|capfirst|upper }}</h2>
+              {{ my_number }},
+              {{ my_list }}
+            </p> 
+            <ul>
+              <li> Item 1</li>
+              <li> Item 2</li>
+              <li> Item 3</li>
+            </ul>
+
+            <ul>  
+            {% for my_sub_item in my_list %}
+              {% if my_sub_item == 333 %}
+                <li>{{ forloop.counter }} - {{ my_sub_item|add:96 }}</li>
+              {% elif my_sub_item == 666 %}
+                <li>{{ forloop.counter }} - {{ my_sub_item|add:333 }}</li>
+              {% else %}
+                <li>{{ forloop.counter }} - {{ my_sub_item|add:1 }}</li>
+              {% endif %}  
+            {% endfor %}
+            </ul>
+          </div>
+      </section>-->
 
     <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>About Us</h2>
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              we are a compitent team that does diligent work because customer
+              satisfaction is our number one priority .
+            </p>
+            <ol>
+              <li><i class="ri-check-double-line"></i> diligent</li>
+              <li><i class="ri-check-double-line"></i> compitent</li>
+              <li><i class="ri-check-double-line"></i> Efficient</li>
+            </ol>
           </div>
-  
-          <div class="row content">
-            <div class="col-lg-6">
-              <p>
-                we are a compitent team that does diligent work because customer satisfaction is our number one priority  .
-              </p>
-              <ol>
-                <li><i class="ri-check-double-line"></i> diligent </li>
-                <li><i class="ri-check-double-line"></i> compitent </li>
-                <li><i class="ri-check-double-line"></i> Efficient</li>
-              </ol>
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0">
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <a href="#" class="btn-learn-more">Learn More</a>
-            </div>
-          </div>  
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore
+              eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.
+            </p>
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
         </div>
-        <div>
-          Hello Ajax
-          <script>
-            src = "C:/Users/user/Desktop/ProjectDjango/src/Appwork/Appwork/static/js/main_ajx.js/"
-          </script>
-        </div>
+      </div>
+      <div>Hello Ajax</div>
+      <div id="brands">
+        <select>
+          {% for brands in brands %}
+          <option><a href="https://api-mobilespecs.azharimm.site/v2/brands/{{brands.brand_slug}}/">  {{brands.brand_name}}</a></options>
+          {% endfor %}  
+        </select>
+      </div>
+      <!--table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">slug</th>
+            <th scope="col">count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for brands in brands %}
+          <tr>
+            <td>{{ brands.brand_id }}</td>
+            <td>{{ brands.brand_name }}</td>
+            <td>{{ brands.brand_slug }}</td>
+            <td>{{ brands.device_count }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table-->
+      <div id="brands">
+        <select>
+          {% for brands in brands %}
+          <option>Choose Brand</option>
+          <option>{{brands.brand_name}}</options>
+          {% endfor %}  
+        </select>
+      </div>
     </section>
-
-</main>
-
+  </main>
+</body>
+{% endblock %}
